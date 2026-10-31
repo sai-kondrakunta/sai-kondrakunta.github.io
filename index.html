@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@200;400&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/lenis.css">
+<link rel="stylesheet" href="vendor/photoswipe.css">
 <link rel="stylesheet" href="site.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -19,6 +21,7 @@
   <nav aria-label="Main">
     <ul class="nav__links">
       <li><a href="#work">Work</a></li>
+      <li><a href="#sessions">Sessions</a></li>
       <li><a class="btn btn--line btn--small" href="#book">Book a shoot</a></li>
     </ul>
   </nav>
@@ -30,7 +33,7 @@
       <img src="images/A740436-2400.jpg" srcset="images/A740436.jpg 1200w, images/A740436-2400.jpg 2400w" sizes="100vw" width="2400" height="1600" alt="A man walking through a lit scaffolding tunnel at night" style="object-position: 50% 55%" fetchpriority="high">
     </figure>
     <div class="hero__ledge container">
-      <h1 id="hero-head" class="hero__head">People, places, and the nights between</h1>
+      <h1 id="hero-head" class="hero__head" data-split>People, places, and the nights between</h1>
       <div class="hero__aside">
         <p class="lead">Street, events, portraits and travel, photographed in New York.</p>
         <div class="actions">
@@ -42,12 +45,12 @@
   </section>
 
   <section class="section container" id="work" aria-labelledby="work-head">
-    <h2 id="work-head">Four kinds of work, one photographer</h2>
-    <ul class="plates">
+    <h2 id="work-head" data-split>Four kinds of work, one photographer</h2>
+    <ul class="plates" data-gallery>
       <li class="plate" data-reveal style="--i:0">
-        <figure class="plate__photo" data-slot="street" data-alt="A street frame of yours: strangers, weather, a city">
+        <a class="shot" href="images/A740425-2400.jpg" data-pswp-width="2400" data-pswp-height="1920" data-cropped="true"><figure data-shutter class="plate__photo" data-slot="street" data-alt="A street frame of yours: strangers, weather, a city">
           <img src="images/A740425.jpg" sizes="(min-width: 60rem) 25vw, (min-width: 40rem) 50vw, 100vw" width="1200" height="960" alt="People crossing a neon-lit street at night" style="object-position: 50% 50%" loading="lazy">
-        </figure>
+        </figure></a>
         <a class="plate__link" href="#book" data-kind="Street">
           <span class="plate__num">Plate 01</span>
           <h3>Street</h3>
@@ -55,9 +58,9 @@
         </a>
       </li>
       <li class="plate" data-reveal style="--i:1">
-        <figure class="plate__photo" data-slot="events" data-alt="An event or wedding frame of yours: a stage, a toast, a first dance">
+        <a class="shot" href="images/A740263-2400.jpg" data-pswp-width="1600" data-pswp-height="2400" data-cropped="true"><figure data-shutter class="plate__photo" data-slot="events" data-alt="An event or wedding frame of yours: a stage, a toast, a first dance">
           <img src="images/A740263.jpg" sizes="(min-width: 60rem) 25vw, (min-width: 40rem) 50vw, 100vw" width="800" height="1200" alt="A woman making a heart with her hands above a Times Square crowd" style="object-position: 50% 40%" loading="lazy">
-        </figure>
+        </figure></a>
         <a class="plate__link" href="#book" data-kind="Events and weddings">
           <span class="plate__num">Plate 02</span>
           <h3>Events and weddings</h3>
@@ -65,9 +68,9 @@
         </a>
       </li>
       <li class="plate" data-reveal style="--i:2">
-        <figure class="plate__photo" data-slot="portraits" data-alt="A portrait of yours: one person, close or in their place">
-          <img src="images/A740222.jpg" sizes="(min-width: 60rem) 25vw, (min-width: 40rem) 50vw, 100vw" width="800" height="1200" alt="A man in a patterned jacket looking up in Times Square" style="object-position: 50% 30%" loading="lazy">
-        </figure>
+        <a class="shot" href="images/A740826-2400.jpg" data-pswp-width="1600" data-pswp-height="2400" data-cropped="true"><figure data-shutter class="plate__photo" data-slot="portraits" data-alt="A portrait of yours: one person, close or in their place">
+          <img src="images/A740826.jpg" sizes="(min-width: 60rem) 25vw, (min-width: 40rem) 50vw, 100vw" width="800" height="1200" alt="A woman laughing beside a Brooklyn Bridge tower" style="object-position: 50% 70%" loading="lazy">
+        </figure></a>
         <a class="plate__link" href="#book" data-kind="Portraits">
           <span class="plate__num">Plate 03</span>
           <h3>Portraits</h3>
@@ -75,9 +78,9 @@
         </a>
       </li>
       <li class="plate" data-reveal style="--i:3">
-        <figure class="plate__photo" data-slot="travel" data-alt="A landscape or travel frame of yours">
+        <a class="shot" href="images/A740160-2400.jpg" data-pswp-width="1920" data-pswp-height="2400" data-cropped="true"><figure data-shutter class="plate__photo" data-slot="travel" data-alt="A landscape or travel frame of yours">
           <img src="images/A740160.jpg" sizes="(min-width: 60rem) 25vw, (min-width: 40rem) 50vw, 100vw" width="960" height="1200" alt="The cables of the Brooklyn Bridge at blue hour" style="object-position: 50% 40%" loading="lazy">
-        </figure>
+        </figure></a>
         <a class="plate__link" href="#book" data-kind="Landscape and travel">
           <span class="plate__num">Plate 04</span>
           <h3>Landscape and travel</h3>
@@ -88,44 +91,89 @@
   </section>
 
   <section class="statement well grained" aria-label="How I work">
-    <p class="container statement__text">Tell me the date, the place and who matters. I will find the light.</p>
+    <p class="container statement__text" data-lit>Tell me the date, the place and who matters. I will find the light.</p>
   </section>
 
   <section class="frames" aria-labelledby="frames-head">
     <div class="container frames__head">
-      <h2 id="frames-head">Recent frames, New York</h2>
+      <h2 id="frames-head" data-split>Recent frames, New York</h2>
     </div>
-    <ul class="rail" tabindex="0" aria-label="Recent frames, scroll sideways">
-      <li><figure class="frame" data-slot="frame-1" data-alt="One of your frames">
+    <ul class="rail" data-gallery data-lenis-prevent-horizontal aria-label="Recent frames, scroll sideways">
+      <li><a class="shot" href="images/A740210-2400.jpg" data-pswp-width="2400" data-pswp-height="1920" data-cropped="true"><figure data-shutter class="frame" data-slot="frame-1" data-alt="One of your frames">
         <img src="images/A740210.jpg" sizes="(min-width: 60rem) 22vw, 70vw" width="1200" height="960" alt="Subway neon on a Times Square facade" loading="lazy">
-      </figure></li>
-      <li><figure class="frame" data-slot="frame-2" data-alt="One of your frames">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740440-2400.jpg" data-pswp-width="1920" data-pswp-height="2400" data-cropped="true"><figure data-shutter class="frame" data-slot="frame-2" data-alt="One of your frames">
         <img src="images/A740440.jpg" sizes="(min-width: 60rem) 22vw, 70vw" width="960" height="1200" alt="A yellow phone booth on a night street" loading="lazy">
-      </figure></li>
-      <li><figure class="frame" data-slot="frame-3" data-alt="One of your frames">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740416-2400.jpg" data-pswp-width="1920" data-pswp-height="2400" data-cropped="true"><figure data-shutter class="frame" data-slot="frame-3" data-alt="One of your frames">
         <img src="images/A740416.jpg" sizes="(min-width: 60rem) 22vw, 70vw" width="960" height="1200" alt="A woman taking a photo under Times Square signs" loading="lazy">
-      </figure></li>
-      <li><figure class="frame" data-slot="frame-4" data-alt="One of your frames">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740166-2400.jpg" data-pswp-width="1600" data-pswp-height="2400" data-cropped="true"><figure data-shutter class="frame" data-slot="frame-4" data-alt="One of your frames">
         <img src="images/A740166.jpg" sizes="(min-width: 60rem) 22vw, 70vw" width="800" height="1200" alt="A woman smiling on the Brooklyn Bridge at dusk" loading="lazy">
-      </figure></li>
-      <li><figure class="frame" data-slot="frame-5" data-alt="One of your frames">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740201-2400.jpg" data-pswp-width="1920" data-pswp-height="2400" data-cropped="true"><figure data-shutter class="frame" data-slot="frame-5" data-alt="One of your frames">
         <img src="images/A740201.jpg" sizes="(min-width: 60rem) 22vw, 70vw" width="960" height="1200" alt="One World Trade Center lit at night" loading="lazy">
-      </figure></li>
-      <li><figure class="frame" data-slot="frame-6" data-alt="One of your frames">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740430-2400.jpg" data-pswp-width="1920" data-pswp-height="2400" data-cropped="true"><figure data-shutter class="frame" data-slot="frame-6" data-alt="One of your frames">
         <img src="images/A740430.jpg" sizes="(min-width: 60rem) 22vw, 70vw" width="960" height="1200" alt="A police car parked on a lit street" loading="lazy">
-      </figure></li>
-      <li><figure class="frame" data-slot="frame-7" data-alt="One of your frames">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740169-2400.jpg" data-pswp-width="2400" data-pswp-height="1920" data-cropped="true"><figure data-shutter class="frame" data-slot="frame-7" data-alt="One of your frames">
         <img src="images/A740169.jpg" sizes="(min-width: 60rem) 22vw, 70vw" width="1200" height="960" alt="A harbour ferry lit in colour at sunset" loading="lazy">
-      </figure></li>
-      <li><figure class="frame" data-slot="frame-8" data-alt="One of your frames">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740235-2400.jpg" data-pswp-width="1600" data-pswp-height="2400" data-cropped="true"><figure data-shutter class="frame" data-slot="frame-8" data-alt="One of your frames">
         <img src="images/A740235.jpg" sizes="(min-width: 60rem) 22vw, 70vw" width="800" height="1200" alt="A man in a blue shirt in the Times Square crowd" loading="lazy">
-      </figure></li>
+      </figure></a></li>
+    </ul>
+  </section>
+
+  <section class="sessions" id="sessions" aria-labelledby="sessions-head">
+    <div class="container sessions__head">
+      <h2 id="sessions-head" data-split>Portrait sessions, Brooklyn</h2>
+      <p class="lead">Couples, friends and solo portraits by the Brooklyn and Manhattan bridges.</p>
+    </div>
+    <ul class="container sessions__grid" data-gallery>
+      <li><a class="shot" href="images/A740679-2400.jpg" data-pswp-width="1600" data-pswp-height="2400"><figure class="session" data-shutter>
+        <img src="images/A740679.jpg" width="800" height="1200" alt="A couple laughing under the Manhattan Bridge in DUMBO" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740929-2400.jpg" data-pswp-width="2400" data-pswp-height="1600"><figure class="session" data-shutter>
+        <img src="images/A740929.jpg" width="1200" height="800" alt="A man leaning on the Brooklyn Bridge railing, looking over the river" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740793-2400.jpg" data-pswp-width="1920" data-pswp-height="2400"><figure class="session" data-shutter>
+        <img src="images/A740793.jpg" width="960" height="1200" alt="A man in a red sweater under the Manhattan Bridge" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A741082-2400.jpg" data-pswp-width="1600" data-pswp-height="2400"><figure class="session" data-shutter>
+        <img src="images/A741082.jpg" width="800" height="1200" alt="A woman looking up at the low sun on the Brooklyn Bridge" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740883-2400.jpg" data-pswp-width="1920" data-pswp-height="2400"><figure class="session" data-shutter>
+        <img src="images/A740883.jpg" width="960" height="1200" alt="A couple sharing a kiss under the Brooklyn Bridge arches" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A741073-2400.jpg" data-pswp-width="1600" data-pswp-height="2400"><figure class="session" data-shutter>
+        <img src="images/A741073.jpg" width="800" height="1200" alt="A woman in a leather jacket turned toward the sun on the Brooklyn Bridge" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740837-2400.jpg" data-pswp-width="2400" data-pswp-height="1766"><figure class="session" data-shutter>
+        <img src="images/A740837.jpg" width="1200" height="883" alt="A man in a cap looking toward the Manhattan Bridge" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740762-2400.jpg" data-pswp-width="2400" data-pswp-height="2400"><figure class="session" data-shutter>
+        <img src="images/A740762.jpg" width="1200" height="1200" alt="A woman sitting on the rocks by the East River with the skyline behind her" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740770-2400.jpg" data-pswp-width="1920" data-pswp-height="2400"><figure class="session" data-shutter>
+        <img src="images/A740770.jpg" width="960" height="1200" alt="A man in a red sweater with the Lower Manhattan skyline behind him" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A740818-2400.jpg" data-pswp-width="1600" data-pswp-height="2400"><figure class="session" data-shutter>
+        <img src="images/A740818.jpg" width="800" height="1200" alt="A woman smiling by the river with One World Trade Center behind her" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A741050-2400.jpg" data-pswp-width="2400" data-pswp-height="1600"><figure class="session" data-shutter>
+        <img src="images/A741050.jpg" width="1200" height="800" alt="A man standing with his arms wide above the Brooklyn Bridge walkway" loading="lazy">
+      </figure></a></li>
+      <li><a class="shot" href="images/A741095-2400.jpg" data-pswp-width="1600" data-pswp-height="2400"><figure class="session" data-shutter>
+        <img src="images/A741095.jpg" width="800" height="1200" alt="A woman sitting high on the Brooklyn Bridge under an open sky" loading="lazy">
+      </figure></a></li>
     </ul>
   </section>
 
   <section class="section container book" id="book" aria-labelledby="book-head">
     <div class="book__intro">
-      <h2 id="book-head">Book a shoot</h2>
+      <h2 id="book-head" data-split>Book a shoot</h2>
       <p class="lead">Send the date and the place. The reply comes by email.</p>
     </div>
     <form class="form" data-endpoint="" novalidate>
@@ -172,7 +220,7 @@
 
 <footer class="footer">
   <div class="container">
-    <p class="footer__mark">Sai Kondrakunta</p>
+    <p class="footer__mark" data-split>Sai Kondrakunta</p>
     <div class="footer__row">
       <p>Write to <span class="fill" data-fill="email">your email address</span></p>
       <ul class="footer__links">
@@ -184,6 +232,9 @@
   </div>
 </footer>
 
+<script src="vendor/lenis.min.js"></script>
+<script src="vendor/photoswipe.umd.min.js"></script>
+<script src="vendor/photoswipe-lightbox.umd.min.js"></script>
 <script>
 // Plate links preselect the kind of shoot in the form.
 document.querySelectorAll('.plate__link[data-kind]').forEach((a) => a.addEventListener('click', () => {
@@ -215,12 +266,67 @@ document.querySelectorAll('form[data-endpoint]').forEach((form) => {
   });
 });
 
-// One reveal for the plates; visible without script.
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Headings rise in word by word: each word sits in a clipping span.
+document.querySelectorAll('[data-split]').forEach((el) => {
+  const words = el.textContent.trim().split(/\s+/);
+  el.textContent = '';
+  words.forEach((w, i) => {
+    const outer = document.createElement('span'), inner = document.createElement('span');
+    outer.className = 'w'; inner.textContent = w; inner.style.setProperty('--d', i);
+    outer.append(inner); el.append(outer, i < words.length - 1 ? ' ' : '');
+  });
+});
+
+// The statement lights up word by word as it scrolls through.
+const lit = document.querySelector('[data-lit]');
+let litWords = [];
+if (lit && !reduce) {
+  const words = lit.textContent.trim().split(/\s+/);
+  lit.textContent = '';
+  litWords = words.map((w, i) => { const s = document.createElement('span'); s.textContent = w; lit.append(s, i < words.length - 1 ? ' ' : ''); return s; });
+}
+
+// Photos in a list develop one after another.
+document.querySelectorAll('[data-gallery]').forEach((g) => g.querySelectorAll('[data-shutter]').forEach((f, i) => f.style.setProperty('--i', i % 4)));
+
+// Reveals: plates, shutters and split headings; the hero runs on load.
+const reveal = (el) => el.classList.add('is-in');
+document.querySelectorAll('.hero [data-split]').forEach((el) => requestAnimationFrame(() => reveal(el)));
+const watched = document.querySelectorAll('[data-reveal], [data-shutter], [data-split]:not(.hero [data-split])');
+if ('IntersectionObserver' in window && !reduce) {
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
+  watched.forEach((el) => io.observe(el));
 } else {
-  document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-in'));
+  watched.forEach(reveal);
+}
+
+// Smooth scrolling (Lenis), off for reduced motion.
+const lenis = !reduce && window.Lenis ? new Lenis({ autoRaf: true, anchors: true }) : null;
+
+// Scroll-linked: the hero photo drifts slower than the page; the statement lights up.
+const heroImg = document.querySelector('.hero__field img'), heroField = document.querySelector('.hero__field');
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+let ticking = false;
+const frame = () => {
+  ticking = false;
+  const y = window.scrollY;
+  if (heroImg && heroField && y < heroField.offsetHeight * 1.5) heroImg.style.translate = `0 ${Math.min(y * 0.16, heroField.offsetHeight * 0.17)}px`;
+  if (litWords.length) {
+    const r = lit.getBoundingClientRect(), vh = window.innerHeight;
+    const p = clamp((vh * 0.9 - r.top) / (r.height + vh * 0.45), 0, 1);
+    litWords.forEach((w, i) => { w.style.opacity = clamp(p * litWords.length * 1.2 - i, 0.16, 1); });
+  }
+};
+if (!reduce) { addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true }); frame(); }
+
+// Lightbox (PhotoSwipe): every photo opens full size.
+if (window.PhotoSwipeLightbox && window.PhotoSwipe) {
+  const lightbox = new PhotoSwipeLightbox({ gallery: '[data-gallery]', children: 'a.shot', pswpModule: PhotoSwipe, bgOpacity: 0.97, showHideAnimationType: reduce ? 'none' : 'zoom', padding: { top: 32, bottom: 32, left: 16, right: 16 } });
+  lightbox.on('beforeOpen', () => lenis && lenis.stop());
+  lightbox.on('destroy', () => lenis && lenis.start());
+  lightbox.init();
 }
 </script>
 <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
